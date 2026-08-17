@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BookEase | Review Booking</title>
+
+
+  
+    <!-- CSS -->
+   
+
+    <link
+        rel="stylesheet"
+        href="css/themes.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/review_booking.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <!-- Logo -->
+
+            <div class="logo">
+
+                <h2>
+                    BookEase
+                </h2>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="../index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../events.html">
+                        Events
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../booking-history.html">
+                        My Bookings
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- Theme Button -->
+
+            <button
+                id="theme-toggle"
+                aria-label="Toggle Theme"
+            >
+                🌙
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="review-page">
+
+
+        <!-- Back -->
+
+        <a
+            href="seat_selection.html"
+            class="back-btn"
+        >
+            ← Back to Seat Selection
+        </a>
+
+
+
+        <!-- Page Heading -->
+
+        <div class="page-heading">
+
+            <h1>
+                Review Your Booking
+            </h1>
+
+            <p>
+                Check your seats and booking details before confirming.
+            </p>
+
+        </div>
+
+
+
+        <!-- REVIEW CONTAINER -->
+
+        <section class="review-container">
+
+
+            <!-- EVENT INFORMATION -->
+
+            <div class="review-event">
+
+
+                <!-- Poster -->
+
+                <div class="poster-container">
+
+                    <img
+                        id="eventPoster"
+                        src="/assets/images.jpg"
+                        alt="Event Poster"
+                    >
+
+                </div>
+
+
+                <!-- Event Details -->
+
+                <div class="event-info">
+
+
+                    <span
+                        id="eventCategory"
+                        class="event-category"
+                    >
+                        Music Concert
+                    </span>
+
+
+                    <h2 id="eventTitle">
+                        Coldplay: Music Of The Spheres
+                    </h2>
+
+
+                    <p id="eventVenue">
+                        📍 DY Patil Stadium, Mumbai
+                    </p>
+
+
+                    <p id="eventDate">
+                        📅 18 October 2026
+                    </p>
+
+
+                    <p id="eventTime">
+                        🕒 7:30 PM
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SELECTED SEATS-->
+
+            <div class="review-section">
+
+
+                <h3>
+                    Selected Seats
+                </h3>
+
+
+                <div id="selectedSeatsList">
+
+                </div>
+
+
+            </div>
+
+
+
+            <!--PRICE DETAILS -->
+
+            <div class="review-section price-section">
+
+
+                <h3>
+                    Price Details
+                </h3>
+
+
+                <!-- Ticket Price -->
+
+                <div class="price-row">
+
+                    <span>
+                        Tickets
+                    </span>
+
+                    <span id="ticketPrice">
+                        ₹0
+                    </span>
+
+                </div>
+
+
+                <!-- Convenience Fee -->
+
+                <div class="price-row">
+
+                    <span>
+                        Convenience Fee
+                    </span>
+
+                    <span id="convenienceFee">
+                        ₹0
+                    </span>
+
+                </div>
+
+
+                <!-- Divider -->
+
+                <div class="price-divider"></div>
+
+
+                <!-- Total -->
+
+                <div class="price-row total-row">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <span id="totalPrice">
+                        ₹0
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!--CONFIRM BUTTON -->
+
+            <button
+                id="confirmBookingBtn"
+                class="confirm-btn"
+            >
+                Confirm Booking
+            </button>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/theme.js"></script>
+
+    <script src="js/review_booking.js"></script>
+
+
+</body>
+
+</html>

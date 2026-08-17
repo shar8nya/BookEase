@@ -1,0 +1,123 @@
+/* ================================
+        GOOGLE FONT
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+/* ================================
+        LIGHT THEME
+================================ */
+
+:root{
+
+    --bg:#F8F9FC;
+    --card:#FFFFFF;
+
+    --primary:#5B5CEB;
+    --secondary:#8B5CF6;
+    --accent:#F97316;
+
+    --text:#1F2937;
+    --text-light:#6B7280;
+
+    --border:#E5E7EB;
+
+    --success:#22C55E;
+    --danger:#EF4444;
+    --warning:#FACC15;
+    --vip:#9333EA;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+/* ================================
+        DARK THEME
+================================ */
+
+body.dark{
+
+    --bg:#0F172A;
+    --card:#1E293B;
+
+    --primary:#6366F1;
+    --secondary:#A855F7;
+    --accent:#FB923C;
+
+    --text:#F8FAFC;
+    --text-light:#CBD5E1;
+
+    --border:#334155;
+
+    --success:#22C55E;
+    --danger:#EF4444;
+    --warning:#FACC15;
+    --vip:#9333EA;
+
+    --shadow:0 12px 30px rgba(0,0,0,.45);
+
+}
+
+
+/* ================================
+        RESET
+================================ */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:'Inter',sans-serif;
+
+    transition:.3s;
+
+}
+
+img{
+
+    width:100%;
+    display:block;
+
+}
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    font-family:'Inter',sans-serif;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}

@@ -1,0 +1,287 @@
+/* ===============================
+        NAVBAR
+================================ */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+
+    background: var(--card);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    box-shadow: var(--shadow);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.logo h2 {
+    color: var(--primary);
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 40px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+#theme-toggle {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* ===============================
+        REVIEW PAGE
+================================ */
+
+.review-page {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.page-heading {
+    margin-bottom: 30px;
+}
+
+.page-heading h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.page-heading p {
+    color: var(--text-light);
+}
+
+
+/* ===============================
+        REVIEW CARD
+================================ */
+
+.review-container {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+
+/* ===============================
+        EVENT DETAILS
+================================ */
+
+.review-event {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+}
+
+.poster-container {
+    width: 140px;
+    height: 180px;
+    flex-shrink: 0;
+}
+
+.poster-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.event-category {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 20px;
+    background: rgba(91, 92, 235, 0.1);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.event-info h2 {
+    margin: 12px 0 15px;
+}
+
+.event-info p {
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+
+/* ===============================
+        SECTIONS
+================================ */
+
+.review-section {
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.review-section h3 {
+    margin-bottom: 18px;
+}
+
+
+/* ===============================
+        SELECTED SEATS
+================================ */
+
+#selectedSeatsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.selected-seat-card {
+    padding: 14px;
+    min-width: 110px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.selected-seat-id {
+    display: block;
+    font-weight: 700;
+}
+
+.selected-seat-type {
+    display: block;
+    color: var(--text-light);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.selected-seat-price {
+    display: block;
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+
+/* ===============================
+        PRICE
+================================ */
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.price-row span:last-child {
+    font-weight: 600;
+}
+
+.price-divider {
+    border-top: 1px dashed var(--border);
+    margin: 20px 0;
+}
+
+.total-row {
+    font-size: 18px;
+}
+
+.total-row span:last-child {
+    color: var(--primary);
+    font-size: 21px;
+}
+
+
+/* ===============================
+        CONFIRM BUTTON
+================================ */
+
+.confirm-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.confirm-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ===============================
+        MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    .review-event {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .review-page {
+        width: 94%;
+    }
+
+    .review-container {
+        padding: 20px;
+    }
+
+}
