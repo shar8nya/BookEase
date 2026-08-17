@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BookEase | Your Ticket</title>
+
+    <link
+        rel="stylesheet"
+        href="css/themes.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/ticket.css"
+    >
+
+</head>
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>BookEase</h2>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="events.html">
+                        Events
+                    </a>
+                </li>
+
+                <li>
+                    <a href="booking-history.html">
+                        My Bookings
+                    </a>
+                </li>
+
+            </ul>
+
+            <button
+                id="theme-toggle"
+                aria-label="Toggle Theme"
+            >
+                🌙
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= TICKET PAGE ================= -->
+
+    <main class="ticket-page">
+
+
+        <!-- Success -->
+
+        <div class="success-message">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h1>
+                Booking Confirmed!
+            </h1>
+
+            <p>
+                Your ticket is ready.
+            </p>
+
+        </div>
+
+
+        <!-- ================= TICKET ================= -->
+
+        <section class="ticket">
+
+
+            <!-- Ticket Header -->
+
+            <div class="ticket-header">
+
+                <span class="ticket-brand">
+                    BookEase
+                </span>
+
+                <span
+                    id="ticketCategory"
+                    class="ticket-category"
+                >
+                    Music Concert
+                </span>
+
+            </div>
+
+
+            <!-- Ticket Main -->
+
+            <div class="ticket-main">
+
+
+                <!-- Poster -->
+
+                <div class="ticket-poster">
+
+                    <img
+                        id="ticketPoster"
+                        src="/assets/images.jpg"
+                        alt="Event Poster"
+                    >
+
+                </div>
+
+
+                <!-- Content -->
+
+                <div class="ticket-content">
+
+                    <h2 id="ticketTitle">
+                        Coldplay: Music Of The Spheres
+                    </h2>
+
+                    <p id="ticketVenue">
+                        DY Patil Stadium, Mumbai
+                    </p>
+
+
+                    <!-- Date / Time -->
+
+                    <div class="event-meta">
+
+                        <div>
+
+                            <span>
+                                Date
+                            </span>
+
+                            <strong id="ticketDate">
+                                18 October 2026
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Time
+                            </span>
+
+                            <strong id="ticketTime">
+                                7:30 PM
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ticket-divider"></div>
+
+
+                    <!-- Seat Information -->
+
+                    <div class="seat-info">
+
+                        <div>
+
+                            <span>
+                                Seat
+                            </span>
+
+                            <strong id="ticketSeats">
+                                F2
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Tickets
+                            </span>
+
+                            <strong id="ticketCount">
+                                1
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Booking ID -->
+
+                    <div class="ticket-bottom">
+
+                        <div>
+
+                            <span>
+                                Booking ID
+                            </span>
+
+                            <strong id="bookingId">
+                                BE-XXXXXX
+                            </strong>
+
+                        </div>
+
+
+                        <div class="ticket-code">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Ticket Footer -->
+
+            <div class="ticket-footer">
+
+                <span>
+                    Total Paid
+                </span>
+
+                <strong id="ticketTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACTIONS ================= -->
+
+        <div class="ticket-actions">
+
+            <button
+                id="myBookingsBtn"
+                class="primary-btn"
+            >
+                View My Bookings
+            </button>
+
+            <button
+                id="eventsBtn"
+                class="secondary-btn"
+            >
+                Browse More Events
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/theme.js"></script>
+
+    <script src="js/ticket.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookEase | Seat Selection</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+
+<body>
+
+    <!--  NAVBAR -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>BookEase</h2>
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="events.html">Events</a></li>
+
+                <li><a href="booking-history.html">My Bookings</a></li>
+
+            </ul>
+
+            <button id="theme-toggle" aria-label="Toggle Theme">
+                🌙
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="booking-page">
+
+        <!-- Back Button -->
+
+        <a href="events.html" class="back-btn">
+
+            ← Back to Events
+
+        </a>
+
+
+
+        <!-- ================= EVENT CARD ================= -->
+
+        <section class="event-card">
+
+            <div class="event-poster">
+
+                <img src="/assets\images.jpg"
+                    alt="Event Poster">
+
+            </div>
+
+
+            <div class="event-details">
+
+                <span class="event-category">
+
+                    Music Concert
+
+                </span>
+
+                <h1>
+
+                    Coldplay : Music Of The Spheres
+
+                </h1>
+
+                <p>
+
+                    📍 DY Patil Stadium, Mumbai
+
+                </p>
+
+                <p>
+
+                    📅 18 October 2026
+
+                </p>
+
+                <p>
+
+                    🕒 7:30 PM
+
+                </p>
+
+                <p>
+
+                    ⏳ 3 Hours
+
+                </p>
+
+                <p>
+
+                    🌐 English
+
+                </p>
+
+                <h3>
+
+                    Starting from ₹2500
+
+                </h3>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SEAT BOOKING ================= -->
+
+        <section class="seat-booking">
+
+            <!-- Screen -->
+
+            <div class="screen">
+
+                SCREEN
+
+            </div>
+
+
+
+            <!-- Seat Layout -->
+
+            <div id="seat-layout">
+
+                <!-- Seats generated using JavaScript -->
+
+            </div>
+
+
+
+            <!-- Legend -->
+
+            <div class="legend">
+
+                <div class="legend-item">
+                    <span class="seat available"></span>
+                    <p>Available (₹400)</p>
+                </div>
+
+                <div class="legend-item">
+                    <span class="seat vip"></span>
+                    <p>VIP (₹600)</p>
+                </div>
+
+                <div class="legend-item">
+                    <span class="seat booked"></span>
+                    <p>Booked</p>
+                </div>
+
+                <div class="legend-item">
+                    <span class="seat selected"></span>
+                    <p>Selected</p>
+                </div>
+
+            </div>
+
+
+
+            <!-- Booking Summary -->
+
+            <aside class="booking-summary">
+
+                <h2>
+
+                    Booking Summary
+
+                </h2>
+
+                <div class="summary-row">
+
+                    <span>
+
+                        Selected Seats
+
+                    </span>
+
+                    <span id="selectedSeats">
+
+                        None
+
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+
+                        Tickets
+
+                    </span>
+
+                    <span id="ticketCount">
+
+                        0
+
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+
+                        Total
+
+                    </span>
+
+                    <span id="totalPrice">
+
+                        ₹0
+
+                    </span>
+
+                </div>
+
+
+                <button id="continueBtn">
+
+                    Review Booking →
+
+                </button>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="js/storage.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/seat-selection.js"></script>
+
+</body>
+
+</html>
