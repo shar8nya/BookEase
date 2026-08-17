@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BookEase | My Bookings</title>
+
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="css/booking_history.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>BookEase</h2>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="../index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../events.html">
+                        Events
+                    </a>
+                </li>
+
+                <li>
+                    <a href="booking-history.html">
+                        My Bookings
+                    </a>
+                </li>
+
+            </ul>
+
+            <button
+                id="theme-toggle"
+                aria-label="Toggle Theme"
+            >
+                🌙
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="history-page">
+
+        <a
+            href="../events.html"
+            class="back-btn"
+        >
+            ← Back to Events
+        </a>
+
+        <h1>
+            My Bookings
+        </h1>
+
+        <p class="history-subtitle">
+            View your upcoming and previous bookings.
+        </p>
+
+
+        <section id="bookingList">
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/theme.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/booking_history.js"></script>
+
+</body>
+
+</html>
