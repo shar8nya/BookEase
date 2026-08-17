@@ -1,0 +1,74 @@
+.history-page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.history-page h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.history-subtitle {
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.booking-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+}
+
+.booking-card h2 {
+    margin-bottom: 15px;
+}
+
+.booking-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.booking-info span {
+    color: var(--text-light);
+}
+
+.booking-info strong {
+    display: block;
+    margin-top: 4px;
+}
+
+.view-ticket {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.empty-bookings {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--card);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+
+    .booking-info {
+        grid-template-columns: 1fr;
+    }
+
+    .history-page {
+        width: 95%;
+    }
+
+}
