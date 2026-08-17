@@ -1,0 +1,369 @@
+/* ==========================================
+    ADMIN.CSS
+    Matches booking module's design system —
+    uses CSS variables from booking/css/themes.css
+    (--primary, --secondary, --card, --shadow, etc.)
+========================================== */
+
+.admin-page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* ==========================================
+                NAVBAR
+========================================== */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 7%;
+
+    background: var(--card);
+
+    box-shadow: var(--shadow);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.logo h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text);
+    font-weight: 500;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.logout-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: var(--danger);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+                LOGIN CARD
+========================================== */
+
+.login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 380px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-shadow: var(--shadow);
+}
+
+.login-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 13px 16px;
+    margin-bottom: 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 13px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.login-box button:hover {
+    transform: translateY(-2px);
+}
+
+.error-msg {
+    color: var(--danger);
+    font-size: 14px;
+    min-height: 18px;
+    margin-bottom: 6px;
+}
+
+/* ==========================================
+                PAGE HEADING
+========================================== */
+
+.admin-page h1 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+/* ==========================================
+                STAT CARDS
+========================================== */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    padding: 25px;
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    transition: .3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.stat-card p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* ==========================================
+                EVENT FORM
+========================================== */
+
+.event-form {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+
+    max-width: 520px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.event-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.event-form input {
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+.event-form button {
+    margin-top: 10px;
+    padding: 13px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.event-form button:hover {
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+                EVENT LIST (Manage Events)
+========================================== */
+
+.event-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    padding: 20px 24px;
+    margin-bottom: 14px;
+
+    box-shadow: var(--shadow);
+
+    transition: .3s;
+}
+
+.event-row:hover {
+    transform: translateY(-2px);
+}
+
+.event-row-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.event-row-info strong {
+    font-size: 17px;
+}
+
+.event-row-info span {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.event-row-actions button {
+    padding: 8px 16px;
+    margin-left: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.event-row-actions button:hover {
+    transform: translateY(-2px);
+}
+
+.edit-btn {
+    background: var(--warning);
+    color: #1F2937;
+}
+
+.delete-btn {
+    background: var(--danger);
+    color: white;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+
+    background: var(--card);
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    color: var(--text-light);
+}
+
+/* ==========================================
+                RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 16px;
+        font-size: 14px;
+    }
+
+    .admin-page {
+        width: 95%;
+    }
+
+    .event-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .event-row-actions {
+        align-self: flex-end;
+    }
+}
