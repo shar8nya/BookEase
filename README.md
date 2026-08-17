@@ -138,7 +138,7 @@ BookEase/
 ├── admin-add-event.html
 ├── admin-manage-events.html
 └── admin-login.html
-
+```
 ---
 
 ## 🚀 Getting Started
