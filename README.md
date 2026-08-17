@@ -101,6 +101,7 @@ The booking module is organized inside the `booking/` directory.
 
 ## 📁 Project Structure
 
+```text
 BookEase/
 │
 ├── assets/
@@ -125,6 +126,7 @@ BookEase/
 │
 ├── css/
 ├── js/
+│
 ├── index.html
 ├── events.html
 ├── event-details.html
