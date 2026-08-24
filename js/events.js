@@ -1,30 +1,24 @@
-function formatEventDate(dateStr) {
-    const d = new Date(dateStr);
-    if (isNaN(d)) return dateStr;
-
-    return d.toLocaleDateString("en-IN", {
+function formatDate(date) {
+    const d = new Date(date);
+    return isNaN(d) ? date : d.toLocaleDateString("en-IN", {
         day: "numeric",
         month: "long",
         year: "numeric"
     });
 }
 
-function formatEventTime(timeStr) {
-    if (!timeStr) return "";
+function formatTime(time) {
+    if (!time) return "";
+    const [h, m] = time.split(":").map(Number);
+    if (isNaN(h)) return time;
 
-    const [hours, minutes] = timeStr.split(":").map(Number);
-    if (isNaN(hours)) return timeStr;
-
-    const period = hours >= 12 ? "PM" : "AM";
-    const displayHour = hours % 12 === 0 ? 12 : hours % 12;
-
-    return `${displayHour}:${String(minutes).padStart(2, "0")} ${period}`;
+    return `${h % 12 || 12}:${String(m).padStart(2, "0")} ${h >= 12 ? "PM" : "AM"}`;
 }
 
 function buildEventCard(event) {
     const card = document.createElement("a");
     card.href = `event-details.html?id=${event.id}`;
-    card.classList.add("event-tile");
+    card.className = "event-tile";
 
     card.innerHTML = `
         <div class="event-tile-poster">
@@ -34,10 +28,10 @@ function buildEventCard(event) {
         <div class="event-tile-body">
             <h3>${event.title}</h3>
             <p>📍 ${event.venue}</p>
-            <p>📅 ${formatEventDate(event.date)} · 🕒 ${formatEventTime(event.time)}</p>
+            <p>📅 ${formatDate(event.date)} · 🕒 ${formatTime(event.time)}</p>
             <div class="event-tile-footer">
                 <span>From ₹${event.regularPrice}</span>
-                <span class="view-details">View Details →</span>
+                <span>View Details →</span>
             </div>
         </div>
     `;
@@ -45,65 +39,37 @@ function buildEventCard(event) {
     return card;
 }
 
-function initFeaturedEvents() {
-    const grid = document.getElementById("featuredEvents");
-    if (!grid) return;
-
-    seedEventsIfEmpty();
-
-    const events = getEvents().slice(0, 3);
-
-    if (events.length === 0) {
-        grid.innerHTML = `<p class="empty-state">No events available right now — check back soon.</p>`;
-        return;
-    }
-
-    events.forEach((event) => grid.appendChild(buildEventCard(event)));
-}
-
 function initEventsPage() {
     const grid = document.getElementById("eventsGrid");
     if (!grid) return;
 
-    seedEventsIfEmpty();
+    const search = document.getElementById("eventSearch");
+    const filter = document.getElementById("categoryFilter");
+    const events = getEvents();
 
-    const searchInput = document.getElementById("eventSearch");
-    const categorySelect = document.getElementById("categoryFilter");
-
-    const allEvents = getEvents();
-
-    const categories = ["All", ...new Set(allEvents.map((e) => e.category))];
-    categorySelect.innerHTML = categories
-        .map((c) => `<option value="${c}">${c}</option>`)
+    filter.innerHTML = ["All", ...new Set(events.map(e => e.category))]
+        .map(c => `<option>${c}</option>`)
         .join("");
 
     function render() {
-        const query = searchInput.value.trim().toLowerCase();
-        const category = categorySelect.value;
+        const query = search.value.toLowerCase().trim();
+        const category = filter.value;
 
-        const filtered = allEvents.filter((event) => {
-            const matchesQuery =
-                event.title.toLowerCase().includes(query) ||
-                event.venue.toLowerCase().includes(query);
+        const result = events.filter(e =>
+            (e.title.toLowerCase().includes(query) ||
+             e.venue.toLowerCase().includes(query)) &&
+            (category === "All" || e.category === category)
+        );
 
-            const matchesCategory = category === "All" || event.category === category;
+        grid.innerHTML = result.length
+            ? ""
+            : `<p class="empty-state">No events match your search.</p>`;
 
-            return matchesQuery && matchesCategory;
-        });
-
-        grid.innerHTML = "";
-
-        if (filtered.length === 0) {
-            grid.innerHTML = `<p class="empty-state">No events match your search.</p>`;
-            return;
-        }
-
-        filtered.forEach((event) => grid.appendChild(buildEventCard(event)));
+        result.forEach(e => grid.appendChild(buildEventCard(e)));
     }
 
-    searchInput.addEventListener("input", render);
-    categorySelect.addEventListener("change", render);
-
+    search.addEventListener("input", render);
+    filter.addEventListener("change", render);
     render();
 }
 
@@ -111,17 +77,14 @@ function initEventDetails() {
     const container = document.getElementById("eventDetailsContent");
     if (!container) return;
 
-    seedEventsIfEmpty();
-
-    const params = new URLSearchParams(window.location.search);
-    const event = getEventById(params.get("id"));
+    const id = new URLSearchParams(location.search).get("id");
+    const event = getEventById(id);
 
     if (!event) {
         container.innerHTML = `
             <div class="empty-state">
                 <h2>Event not found</h2>
-                <p>This event may have been removed.</p>
-                <a href="events.html" class="btn-primary">Browse Events</a>
+                <a href="events.html">Browse Events</a>
             </div>
         `;
         return;
@@ -133,44 +96,31 @@ function initEventDetails() {
         <div class="details-poster">
             <img src="${event.poster}" alt="${event.title}">
         </div>
+
         <div class="details-info">
             <span class="event-tile-category">${event.category}</span>
             <h1>${event.title}</h1>
             <p>📍 ${event.venue}</p>
-            <p>📅 ${formatEventDate(event.date)}</p>
-            <p>🕒 ${formatEventTime(event.time)}</p>
-            <p class="details-description">${event.description || ""}</p>
+            <p>📅 ${formatDate(event.date)}</p>
+            <p>🕒 ${formatTime(event.time)}</p>
+            <p>${event.description || ""}</p>
 
             <div class="details-pricing">
-                <div>
-                    <span>Regular</span>
-                    <strong>₹${event.regularPrice}</strong>
-                </div>
-                <div>
-                    <span>VIP</span>
-                    <strong>₹${event.vipPrice}</strong>
-                </div>
+                <span>Regular <strong>₹${event.regularPrice}</strong></span>
+                <span>VIP <strong>₹${event.vipPrice}</strong></span>
             </div>
 
             <button id="bookNowBtn" class="btn-primary">Book Now →</button>
         </div>
     `;
 
-    initBookNowButton(event);
-}
-
-function initBookNowButton(event) {
-    const btn = document.getElementById("bookNowBtn");
-    if (!btn) return;
-
-    btn.addEventListener("click", () => {
-        if (!requireUserLogin()) return;
+    document.getElementById("bookNowBtn").addEventListener("click", () => {
+        if (typeof requireUserLogin === "function" && !requireUserLogin()) return;
 
         sessionStorage.setItem("bookEaseSelectedEvent", JSON.stringify(event));
-        window.location.href = "booking/seat_selection.html";
+        location.href = "booking/seat_selection.html";
     });
 }
 
-initFeaturedEvents();
 initEventsPage();
 initEventDetails();
