@@ -26,21 +26,22 @@ const confirmBookingBtn =
 
 // EVENT DETAILS
 
-const eventData = {
+// GET SELECTED EVENT FROM SESSION STORAGE
 
-    title: "Coldplay: Music Of The Spheres",
+const storedEvent =
+    sessionStorage.getItem("bookEaseSelectedEvent");
 
-    category: "Music Concert",
+if (!storedEvent) {
 
-    venue: "DY Patil Stadium, Mumbai",
+    alert(
+        "No event selected. Please select an event first."
+    );
 
-    date: "18 October 2026",
+    window.location.href = "../events.html";
 
-    time: "7:30 PM",
+}
 
-    poster: "/assets/images.jpg"
-
-};
+const eventData = JSON.parse(storedEvent);
 
 
 // GET BOOKING FROM SESSION STORAGE
@@ -97,7 +98,6 @@ function displayEvent() {
 
 }
 
-
 // DISPLAY SELECTED SEATS
 
 function displaySeats(seats) {
@@ -112,7 +112,6 @@ function displaySeats(seats) {
         card.classList.add(
             "selected-seat-card"
         );
-
 
         // Seat number
 
@@ -161,7 +160,6 @@ function displaySeats(seats) {
 
         card.appendChild(seatPrice);
 
-
         // Add card to page
 
         selectedSeatsList.appendChild(card);
@@ -169,8 +167,6 @@ function displaySeats(seats) {
     });
 
 }
-
-
 
 // CALCULATE PRICE
 
@@ -276,8 +272,6 @@ function setupConfirmButton(booking) {
             booking.bookedAt =
                 new Date().toISOString();
 
-
-            
             // GET OLD BOOKINGS
 
             const bookings =
@@ -292,7 +286,6 @@ function setupConfirmButton(booking) {
 
             bookings.push(booking);
 
-
             // Save booking history
 
             localStorage.setItem(
@@ -300,24 +293,19 @@ function setupConfirmButton(booking) {
                 JSON.stringify(bookings)
             );
 
-
             // Save booking for ticket page
 
             sessionStorage.setItem(
                 "bookEaseConfirmedBooking",
                 JSON.stringify(booking)
             );
-
-
             // Remove temporary booking
 
             sessionStorage.removeItem(
                 "bookEaseCurrentBooking"
             );
 
-
             // Go to ticket
-
             window.location.href =
                 "ticket.html";
 
